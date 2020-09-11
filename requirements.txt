@@ -2,6 +2,8 @@
 # production requirements
 pytconf
 pylogconf
+python-pptx
+pyvardump
 # dev requirements
 pyclassifiers
 pypitools

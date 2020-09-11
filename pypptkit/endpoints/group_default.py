@@ -1,8 +1,10 @@
 """
 The default group of operations that pypptkit has
 """
-
-from pytconf import register_endpoint, register_function_group
+from pptx import Presentation
+from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pytconf import register_endpoint, register_function_group, get_free_args
+from pyvardump import dump
 
 import pypptkit
 import pypptkit.version
@@ -39,7 +41,30 @@ def extract_text() -> None:
     """
     extract text from ppt files
     """
-    pass
+    for filename in get_free_args():
+        presentation = Presentation(filename)
+        for slide_number, slide in enumerate(presentation.slides):
+            print(f"slide number {slide_number}")
+            if slide.name != "":
+                print(f"slide.name {slide.name}")
+            # This block extracts hyperlinks
+            for v in slide.part.rels.values():
+                target: str = v.target_ref
+                if target.startswith(".."):
+                    continue
+                print(v.target_ref)
+            for shape in slide.shapes:
+                if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER:
+                    print(shape.shape_type)
+                    print(shape.text)
+                if shape.shape_type == MSO_SHAPE_TYPE.TEXT_BOX:
+                    print(shape.shape_type)
+                    print(shape.text)
+                if shape.shape_type == MSO_SHAPE_TYPE.TABLE:
+                    print(shape.shape_type)
+                    for row in shape.table.rows:
+                        for cell in row.cells:
+                            print(cell.text)
 
 
 @register_endpoint(
@@ -50,7 +75,18 @@ def extract_links() -> None:
     """
     extract links from ppt files
     """
-    pass
+    refs = set()
+    for filename in get_free_args():
+        presentation = Presentation(filename)
+        for slide in presentation.slides:
+            for v in slide.part.rels.values():
+                target: str = v.target_ref
+                if target.startswith(".."):
+                    continue
+                refs.add(target)
+    refs = sorted(list(refs))
+    for ref in refs:
+        print(ref)
 
 
 @register_endpoint(
@@ -61,7 +97,18 @@ def download_links() -> None:
     """
     download links from ppt files
     """
-    pass
+    refs = set()
+    for filename in get_free_args():
+        presentation = Presentation(filename)
+        for slide in presentation.slides:
+            for v in slide.part.rels.values():
+                target: str = v.target_ref
+                if target.startswith(".."):
+                    continue
+                refs.add(target)
+    refs = sorted(list(refs))
+    for ref in refs:
+        print(ref)
 
 
 @register_endpoint(
@@ -72,4 +119,9 @@ def dump_slides() -> None:
     """
     dump object of ppt files
     """
-    pass
+    for filename in get_free_args():
+        print(f"filename {filename}")
+        presentation = Presentation(filename)
+        for number, slide in enumerate(presentation.slides):
+            print(f"slide {number}")
+            dump(slide)

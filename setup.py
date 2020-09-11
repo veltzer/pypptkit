@@ -9,7 +9,7 @@ def get_readme():
 setuptools.setup(
     # the first three fields are a must according to the documentation
     name="pypptkit",
-    version="0.0.1",
+    version="0.0.2",
     packages=[
         'pypptkit',
         'pypptkit.endpoints',
@@ -36,6 +36,8 @@ setuptools.setup(
     install_requires=[
         'pytconf',
         'pylogconf',
+        'python-pptx',
+        'pyvardump',
     ],
     extras_require={
     },

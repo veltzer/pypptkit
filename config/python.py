@@ -12,6 +12,8 @@ setup_requires = [
 run_requires = [
     'pytconf',  # for command line parsing
     'pylogconf',  # for logging configuration
+    'python-pptx',  # for ppt work
+    'pyvardump',  # for dumping
 ]
 
 test_requires = [
