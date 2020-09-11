@@ -19,7 +19,7 @@ def register_all_groups():
 @register_main()
 def main():
     """
-    pypptkit will help you write makefiles
+    pypptkit helps doing things with ppt files
     """
     pylogconf.core.setup()
     register_all_groups()
