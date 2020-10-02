@@ -12,7 +12,6 @@ setuptools.setup(
     version="0.0.3",
     packages=[
         'pypptkit',
-        'pypptkit.endpoints',
     ],
     # from here all is optional
     description="pypptkit helps doing things with ppt files",
@@ -57,7 +56,7 @@ setuptools.setup(
     data_files=[
     ],
     entry_points={"console_scripts": [
-        'pypptkit=pypptkit.endpoints.main:main',
+        'pypptkit=pypptkit.main:main',
     ]},
     python_requires=">=3.6",
 )

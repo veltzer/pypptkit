@@ -19,6 +19,9 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/veltzer/pypptkit/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/veltzer/pypptkit?targetFile=requirements.txt)
 
 
+Actions
+
+![build](https://github.com/veltzer/pypptkit/workflows/build/badge.svg)
 
 pypptkit helps doing things with ppt files
 

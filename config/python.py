@@ -3,7 +3,7 @@ import config.project
 package_name = config.project.project_name
 
 console_scripts = [
-    'pypptkit=pypptkit.endpoints.main:main',
+    'pypptkit=pypptkit.main:main',
 ]
 
 setup_requires = [
@@ -19,7 +19,9 @@ run_requires = [
 test_requires = [
     'pylint',  # to check for lint errors
     'pytest',  # for testing
-    'pyflakes',  # for testing
+    'pytest-cov',  # for testing
+    'flake8',  # for linting
+    'pymakehelper',  # for the makefile
 ]
 
 dev_requires = [
