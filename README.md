@@ -16,6 +16,8 @@
 ![Downloads](https://pepy.tech/badge/pypptkit/month)
 ![Downloads](https://pepy.tech/badge/pypptkit/week)
 
+[![Known Vulnerabilities](https://snyk.io/test/github/veltzer/pypptkit/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/veltzer/pypptkit?targetFile=requirements.txt)
+
 
 
 pypptkit helps doing things with ppt files
