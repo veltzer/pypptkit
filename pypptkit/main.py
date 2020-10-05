@@ -8,6 +8,7 @@ from pytconf import register_endpoint, get_free_args, register_main, config_arg_
 from pyvardump import dump
 
 from pypptkit.static import DESCRIPTION, APP_NAME, VERSION_STR
+from pypptkit.utils import get_sorted_refs, download
 
 
 @register_endpoint(
@@ -47,16 +48,7 @@ def extract_text() -> None:
     description="Extract links from ppt files",
 )
 def extract_links() -> None:
-    refs = set()
-    for filename in get_free_args():
-        presentation = Presentation(filename)
-        for slide in presentation.slides:
-            for v in slide.part.rels.values():
-                target: str = v.target_ref
-                if target.startswith(".."):
-                    continue
-                refs.add(target)
-    refs = sorted(list(refs))
+    refs = get_sorted_refs(get_free_args())
     for ref in refs:
         print(ref)
 
@@ -66,18 +58,9 @@ def extract_links() -> None:
     description="Download links from ppt files",
 )
 def download_links() -> None:
-    refs = set()
-    for filename in get_free_args():
-        presentation = Presentation(filename)
-        for slide in presentation.slides:
-            for v in slide.part.rels.values():
-                target: str = v.target_ref
-                if target.startswith(".."):
-                    continue
-                refs.add(target)
-    refs = sorted(list(refs))
+    refs = get_sorted_refs(get_free_args())
     for ref in refs:
-        print(ref)
+        download(ref)
 
 
 @register_endpoint(
