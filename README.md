@@ -12,11 +12,6 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/pypptkit)
 
 ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
-![Downloads](https://pepy.tech/badge/pypptkit)
-![Downloads](https://pepy.tech/badge/pypptkit/month)
-![Downloads](https://pepy.tech/badge/pypptkit/week)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/veltzer/pypptkit/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/veltzer/pypptkit?targetFile=requirements.txt)
 
 
 Actions
