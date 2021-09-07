@@ -14,7 +14,6 @@
 ![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)
 
 ![build](https://github.com/veltzer/pypptkit/workflows/build/badge.svg)
-
 pypptkit helps doing things with ppt files
 
 project website: https://veltzer.github.io/pypptkit
