@@ -5,7 +5,7 @@ import pylogconf.core
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 from pytconf import register_endpoint, get_free_args, register_main, config_arg_parse_and_launch
-from pyvardump import dump
+from pyvardump import dump_print
 
 from pypptkit.static import DESCRIPTION, APP_NAME, VERSION_STR
 from pypptkit.utils import get_sorted_refs, download
@@ -73,7 +73,7 @@ def dump_slides() -> None:
         presentation = Presentation(filename)
         for number, slide in enumerate(presentation.slides):
             print(f"slide {number}")
-            dump(slide)
+            dump_print(slide)
 
 
 @register_main(
