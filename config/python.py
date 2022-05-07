@@ -6,7 +6,7 @@ console_scripts = [
     "pypptkit=pypptkit.main:main",
 ]
 
-run_requires = [
+install_requires = [
     "pytconf",
     "pylogconf",
     "python-pptx",
