@@ -44,8 +44,8 @@ def get_sorted_refs(filenames: List[str]):
                 if target.startswith(".."):
                     continue
                 refs.add(target)
-    refs = sorted(list(refs))
-    return refs
+    refs_list = sorted(list(refs))
+    return refs_list
 
 
 # noinspection PyUnusedLocal
