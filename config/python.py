@@ -2,8 +2,11 @@ console_scripts = [
     "pypptkit=pypptkit.main:main",
 ]
 dev_requires = [
-    "pyclassifiers",
     "pypitools",
+]
+make_requires = [
+    "pymakehelper",
+    "pyclassifiers",
     "pydmt",
     "Sphinx",
 ]
@@ -18,6 +21,5 @@ test_requires = [
     "pytest",
     "pytest-cov",
     "flake8",
-    "pymakehelper",
     "mypy",
 ]
