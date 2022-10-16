@@ -8,7 +8,6 @@ make_requires = [
     "pymakehelper",
     "pyclassifiers",
     "pydmt",
-    "sphinx",
 ]
 install_requires = [
     "pytconf",
