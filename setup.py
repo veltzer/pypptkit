@@ -24,7 +24,7 @@ setuptools.setup(
     keywords=[
         "ppt",
         "download",
-        "convert to text",
+        "convert-to-text",
     ],
     url="https://veltzer.github.io/pypptkit",
     download_url="https://github.com/veltzer/pypptkit",
