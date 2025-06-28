@@ -36,7 +36,7 @@ def no_err_run(args):
     subprocess.call(args)
 
 
-def get_sorted_refs(filenames: List[str]):
+def get_sorted_refs(filenames: list[str]):
     refs = set()
     for filename in filenames:
         presentation = Presentation(filename)
