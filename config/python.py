@@ -1,8 +1,8 @@
 """ python deps for this project """
 
-console_scripts: list[str] = [
-    "pypptkit=pypptkit.main:main",
-]
+scripts: dict[str,str] = {
+    "pypptkit": "pypptkit.main:main",
+}
 
 config_requires: list[str] = [
     "pyclassifiers",

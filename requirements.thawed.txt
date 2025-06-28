@@ -1,13 +1,12 @@
 # THIS IS AN AUTO-GENERATED FILE. DO NOT EDIT!
+mypy
 pyclassifiers
-pytconf
-pylogconf
-python-pptx
-pyvardump
-pymakehelper
 pydmt
 pylint
+pylogconf
+pymakehelper
+pytconf
 pytest
 pytest-cov
-flake8
-mypy
+python-pptx
+pyvardump
