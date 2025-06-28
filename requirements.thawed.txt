@@ -7,6 +7,6 @@ pylogconf
 pymakehelper
 pytconf
 pytest
-pytest-cov
 python-pptx
 pyvardump
+ruff
