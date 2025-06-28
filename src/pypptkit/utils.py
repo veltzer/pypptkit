@@ -2,7 +2,6 @@
 
 import os
 import subprocess
-from typing import List
 
 from pptx import Presentation
 
