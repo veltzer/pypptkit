@@ -1,28 +1,17 @@
 """ python deps for this project """
 
-scripts: dict[str,str] = {
-    "pypptkit": "pypptkit.main:main",
-}
+import config.shared
 
-config_requires: list[str] = [
-    "pyclassifiers",
-]
 install_requires: list[str] = [
     "pytconf",
     "pylogconf",
     "python-pptx",
     "pyvardump",
 ]
-build_requires: list[str] = [
-    "hatch",
-    "pydmt",
-    "pymakehelper",
-    "pycmdtools",
-]
-test_requires: list[str] = [
-    "pylint",
-    "pytest",
-    "mypy",
-    "ruff",
-]
-requires = config_requires + install_requires + build_requires + test_requires
+build_requires: list[str] = config.shared.PBUILD
+test_requires: list[str] = config.shared.PTEST
+requires = install_requires + build_requires + test_requires
+
+scripts: dict[str,str] = {
+    "pypptkit": "pypptkit.main:main",
+}
