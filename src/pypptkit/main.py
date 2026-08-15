@@ -4,11 +4,11 @@ main entry point
 import pylogconf.core
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
-from pytconf import register_endpoint, get_free_args, register_main, config_arg_parse_and_launch
+from pytconf import config_arg_parse_and_launch, get_free_args, register_endpoint, register_main
 from pyvardump import dump_print
 
-from pypptkit.static import DESCRIPTION, APP_NAME, VERSION_STR
-from pypptkit.utils import get_sorted_refs, download
+from pypptkit.static import APP_NAME, DESCRIPTION, VERSION_STR
+from pypptkit.utils import download, get_sorted_refs
 
 
 @register_endpoint(
