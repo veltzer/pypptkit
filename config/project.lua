@@ -5,3 +5,4 @@ KEYWORDS = {
     "download",
     "convert-to-text",
 }
+PYPI = true
