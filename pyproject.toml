@@ -38,6 +38,14 @@ dependencies = [
     "pyvardump",
 ]
 
+[dependency-groups]
+dev = [
+    "mypy",
+    "pylint",
+    "pytest",
+    "ruff",
+]
+
 [project.urls]
 "Homepage" = "https://github.com/veltzer/pypptkit"
 "Bug Tracker" = "https://github.com/veltzer/pypptkit/issues"
