@@ -5,7 +5,7 @@
 
 description: pypptkit helps doing things with ppt files
 
-project website: https://veltzer.github.io/pypptkit
+project website: <https://veltzer.github.io/pypptkit>
 
 author: Mark Veltzer
 
