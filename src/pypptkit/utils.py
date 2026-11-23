@@ -49,6 +49,5 @@ def get_sorted_refs(filenames: list[str]):
 
 
 # noinspection PyUnusedLocal
-# pylint: disable=unused-argument
 def download(link: str):
     pass
