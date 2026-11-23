@@ -4,6 +4,8 @@ main entry point
 import pylogconf.core
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
+from pptx.shapes.autoshape import Shape
+from pptx.shapes.graphfrm import GraphicFrame
 from pytconf import config_arg_parse_and_launch, get_free_args, register_endpoint, register_main
 from pyvardump import dump_print
 
@@ -29,14 +31,13 @@ def extract_text() -> None:
                     continue
                 print(v.target_ref)
             for shape in slide.shapes:
-                # pylint: disable=no-member
-                if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER:
+                if shape.shape_type == MSO_SHAPE_TYPE.PLACEHOLDER and isinstance(shape, Shape):
                     print(shape.shape_type)
                     print(shape.text)
-                if shape.shape_type == MSO_SHAPE_TYPE.TEXT_BOX:
+                if shape.shape_type == MSO_SHAPE_TYPE.TEXT_BOX and isinstance(shape, Shape):
                     print(shape.shape_type)
                     print(shape.text)
-                if shape.shape_type == MSO_SHAPE_TYPE.TABLE:
+                if shape.shape_type == MSO_SHAPE_TYPE.TABLE and isinstance(shape, GraphicFrame):
                     print(shape.shape_type)
                     for row in shape.table.rows:
                         for cell in row.cells:
