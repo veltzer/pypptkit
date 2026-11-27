@@ -8,32 +8,32 @@ from pypptkit import utils
 
 
 class EnsureDirTests(unittest.TestCase):
-    def test_creates_missing_parent(self):
+    def test_creates_missing_parent(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             target = os.path.join(d, "a", "b", "file.txt")
             utils.ensure_dir(target)
             assert os.path.isdir(os.path.join(d, "a", "b"))
 
-    def test_no_error_when_parent_exists(self):
+    def test_no_error_when_parent_exists(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             target = os.path.join(d, "file.txt")
             utils.ensure_dir(target)
             assert os.path.isdir(d)
 
-    def test_bare_filename_is_noop(self):
+    def test_bare_filename_is_noop(self) -> None:
         # dirname of a bare name is "", which ensure_dir must skip
         utils.ensure_dir("bare_name_no_dir")
         assert not os.path.isdir("")
 
 
 class TouchTests(unittest.TestCase):
-    def test_creates_new_file(self):
+    def test_creates_new_file(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             target = os.path.join(d, "new.txt")
             utils.touch(target)
             assert os.path.isfile(target)
 
-    def test_updates_mtime_of_existing_file(self):
+    def test_updates_mtime_of_existing_file(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             target = os.path.join(d, "existing.txt")
             with open(target, "w", encoding="utf-8") as fh:
@@ -47,13 +47,13 @@ class TouchTests(unittest.TestCase):
 
 
 class TouchMkdirTests(unittest.TestCase):
-    def test_creates_dirs_and_file(self):
+    def test_creates_dirs_and_file(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             target = os.path.join(d, "x", "y", "z.txt")
             utils.touch_mkdir(target)
             assert os.path.isfile(target)
 
-    def test_many_creates_all(self):
+    def test_many_creates_all(self) -> None:
         with tempfile.TemporaryDirectory() as d:
             names = [os.path.join(d, f"sub{i}", f"f{i}.txt") for i in range(3)]
             utils.touch_mkdir_many(names)

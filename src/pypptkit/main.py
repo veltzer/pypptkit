@@ -82,7 +82,7 @@ def dump_slides() -> None:
     app_name=APP_NAME,
     version=VERSION_STR,
 )
-def main():
+def main() -> None:
     pylogconf.core.setup()
     config_arg_parse_and_launch()
 
